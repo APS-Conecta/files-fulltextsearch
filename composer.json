@@ -1,0 +1,47 @@
+{
+  "name": "nextcloud/files_fulltextsearch",
+  "description": "files_fulltextsearch",
+  "minimum-stability": "stable",
+  "license": "agpl",
+  "config": {
+    "optimize-autoloader": true,
+    "classmap-authoritative": true,
+    "autoloader-suffix": "Files_FullTextSearch",
+    "platform": {
+      "php": "8.2"
+    },
+    "allow-plugins": {
+      "bamarni/composer-bin-plugin": true
+    }
+  },
+  "authors": [
+    {
+      "name": "Maxence Lange",
+      "email": "maxence@artificial-owl.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "OCA\\Files_FullTextSearch\\": "lib/"
+    }
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "@composer bin all install --ansi"
+    ],
+    "cs:fix": "php-cs-fixer fix",
+    "cs:check": "php-cs-fixer fix --dry-run --diff",
+    "lint": "find . -name \\*.php -not -path './vendor/*' -not -path './vendor-bin/*' -not -path './build/*' -not -path './node_modules/*' -print0 | xargs -0 -n1 php -l",
+    "psalm": "psalm",
+    "psalm:fix": "psalm --alter --issues=InvalidReturnType,InvalidNullableReturnType,MissingParamType,InvalidFalsableReturnType",
+    "psalm:update-baseline": "psalm --threads=1 --update-baseline",
+    "test:unit": "phpunit --color -c tests/phpunit.xml"
+  },
+  "require": {
+    "bamarni/composer-bin-plugin": "^1.8"
+  },
+  "require-dev": {
+    "nextcloud/coding-standard": "^v1.4",
+    "nextcloud/ocp": "dev-stable34"
+  }
+}
