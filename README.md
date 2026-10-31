@@ -1,3 +1,9 @@
+# APS Conecta Files Full Text Search
+
+Maintenance fork of [Nextcloud Files Full Text Search](https://github.com/nextcloud/files_fulltextsearch) for APS Conecta on Nextcloud 34. This is an independent fork; the original licence and attribution remain in this repository.
+
+The source includes the upstream [stable34 UID fix](https://github.com/nextcloud/files_fulltextsearch/pull/463), commit `26bd54ddcec5e26b1e5e905d7417910d2a6a0baf`. The app retains the `files_fulltextsearch` identity and upstream interface. The APS release workflow builds the settings bundle, copies the unchanged legacy script from `src/legacy-files.js`, and publishes the four signed release assets through the shared app publisher.
+
 <!--
   - SPDX-FileCopyrightText: 2017 Nextcloud GmbH and Nextcloud contributors
   - SPDX-License-Identifier: AGPL-3.0-or-later

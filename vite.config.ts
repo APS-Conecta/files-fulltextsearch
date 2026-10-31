@@ -13,9 +13,7 @@ export default createAppConfig({
 		includeSourceMaps: true,
 	},
 	thirdPartyLicense: false,
-	// js/ and css/ also hold hand-written legacy runtime assets (e.g. files.js) unrelated to this
-	// Vue bundle; the default behaviour wipes the whole directory on every build, which would
-	// delete them.
+	// Preserve the hand-written runtime styles while building the settings bundle.
 	emptyOutputDirectory: false,
 	// Make sure we have one cache-able CSS entry point per JS entry
 	createEmptyCSSEntryPoints: true,
